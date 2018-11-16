@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Tag_menu extends AppCompatActivity {
+    private boolean Cetacean;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +21,8 @@ public class Tag_menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.share_sucessfull);
+                Cetacean = true;
+                Toast.makeText(Tag_menu.this,"Cetacean", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -26,6 +30,8 @@ public class Tag_menu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.share_sucessfull);
+                Cetacean = false;
+                Toast.makeText(Tag_menu.this,"Pollution", Toast.LENGTH_LONG).show();
 
             }
         });
