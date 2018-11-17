@@ -14,6 +14,15 @@ public class sharelocation_menu extends AppCompatActivity {
         Button btnMainMenu2 = (Button) findViewById(R.id.btn_Home2);
         Button btn_UseCamera = (Button) findViewById(R.id.btn_UseCamera);
         Button btnShareLocation = (Button) findViewById(R.id.btnShareLocation);
+        Button btnSeeMap3 = (Button) findViewById(R.id.btn_seeMap3);
+        Button btnShareOnApp3 = (Button)findViewById(R.id.btn_shareOnApp3);
+        btnSeeMap3.setOnClickListener(new View.OnClickListener() {//faz abrir o google maps ao carregar no botão
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(sharelocation_menu.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
         btnMainMenu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,5 +45,12 @@ public class sharelocation_menu extends AppCompatActivity {
                 startActivity(intent);
             }
     });
+        btnShareOnApp3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(sharelocation_menu.this, sharelocation_menu.class);
+                startActivity(intent);
+            }
+        });
     }
 }
