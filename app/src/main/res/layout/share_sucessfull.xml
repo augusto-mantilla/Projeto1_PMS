@@ -12,8 +12,10 @@
         android:layout_height="698dp"
         android:background="@drawable/share_succ"
         android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/share_succ"
-        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
     <TextView
