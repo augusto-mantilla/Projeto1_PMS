@@ -33,7 +33,8 @@ public class sharelocation_menu extends AppCompatActivity {
         btn_UseCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                //Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
+                Intent intent = new Intent(sharelocation_menu.this, Camera.class);
                 startActivity(intent);
 
             }
