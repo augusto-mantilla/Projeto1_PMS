@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class Tag_menu extends AppCompatActivity {
+public class TagMenu extends AppCompatActivity {
     private boolean Cetacean;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class Tag_menu extends AppCompatActivity {
         btnSeeMap4.setOnClickListener(new View.OnClickListener() {//faz abrir o google maps ao carregar no botão
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Tag_menu.this, MapsActivity.class);
+                Intent intent = new Intent(TagMenu.this, MapsActivity.class);
                 startActivity(intent);
             }
         });
@@ -31,7 +31,7 @@ public class Tag_menu extends AppCompatActivity {
             public void onClick(View v) {
                 setContentView(R.layout.share_sucessfull);
                 Cetacean = true;
-                Toast.makeText(Tag_menu.this,"Cetacean", Toast.LENGTH_LONG).show();
+                Toast.makeText(TagMenu.this,"Cetacean", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -40,21 +40,21 @@ public class Tag_menu extends AppCompatActivity {
             public void onClick(View v) {
                 setContentView(R.layout.share_sucessfull);
                 Cetacean = false;
-                Toast.makeText(Tag_menu.this,"Pollution", Toast.LENGTH_LONG).show();
+                Toast.makeText(TagMenu.this,"Pollution", Toast.LENGTH_LONG).show();
 
             }
         });
         btnMainMenu3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Tag_menu.this, MainActivity.class);
+                Intent intent = new Intent(TagMenu.this, MainActivity.class);
                 startActivity(intent);
             }
         });
         btnShareOnApp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Tag_menu.this, sharelocation_menu.class);
+                Intent intent = new Intent(TagMenu.this, ShareLocationMenu.class);
                 startActivity(intent);
             }
         });

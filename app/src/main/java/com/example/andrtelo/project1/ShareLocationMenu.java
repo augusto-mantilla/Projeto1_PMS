@@ -6,27 +6,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class sharelocation_menu extends AppCompatActivity {
+public class ShareLocationMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.share_menu);
-        Button btnMainMenu2 = (Button) findViewById(R.id.btn_Home2);
-        Button btn_UseCamera = (Button) findViewById(R.id.btn_UseCamera);
-        Button btnShareLocation = (Button) findViewById(R.id.btnShareLocation);
-        Button btnSeeMap3 = (Button) findViewById(R.id.btn_seeMap3);
-        Button btnShareOnApp3 = (Button)findViewById(R.id.btn_shareOnApp3);
+        Button btnMainMenu2 = findViewById(R.id.btn_Home2);
+        Button btn_UseCamera = findViewById(R.id.btn_UseCamera);
+        Button btnShareLocation = findViewById(R.id.btnShareLocation);
+        Button btnSeeMap3 = findViewById(R.id.btn_seeMap3);
+        Button btnShareOnApp3 = findViewById(R.id.btn_shareOnApp3);
         btnSeeMap3.setOnClickListener(new View.OnClickListener() {//faz abrir o google maps ao carregar no botão
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(sharelocation_menu.this, MapsActivity.class);
+                Intent intent = new Intent(ShareLocationMenu.this, MapsActivity.class);
                 startActivity(intent);
             }
         });
         btnMainMenu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(sharelocation_menu.this, MainActivity.class);
+                Intent intent = new Intent(ShareLocationMenu.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,14 +41,14 @@ public class sharelocation_menu extends AppCompatActivity {
         btnShareLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(sharelocation_menu.this, Tag_menu.class);
+                Intent intent = new Intent(ShareLocationMenu.this, TagMenu.class);
                 startActivity(intent);
             }
     });
         btnShareOnApp3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(sharelocation_menu.this, sharelocation_menu.class);
+                Intent intent = new Intent(ShareLocationMenu.this, ShareLocationMenu.class);
                 startActivity(intent);
             }
         });
