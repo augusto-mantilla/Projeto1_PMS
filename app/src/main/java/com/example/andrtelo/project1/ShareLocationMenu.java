@@ -34,8 +34,9 @@ public class ShareLocationMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-                Intent intent = new Intent(sharelocation_menu.this, Camera.class);
-                startActivity(intent);
+                //Intent intent = new Intent(ShareLocationMenu.this, Camera.class);
+                Intent intent = new Intent(ShareLocationMenu.this, CameraAPI.class);
+               startActivity(intent);
 
             }
         });
