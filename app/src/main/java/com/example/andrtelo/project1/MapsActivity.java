@@ -74,10 +74,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         try {
             if (mLocationPermissionsGranted) {
-
                 final Task location = mFusedLocationProviderClient.getLastLocation();
-                if(location != null) {
-                    location.addOnCompleteListener(new OnCompleteListener() {
+                if (location != null) {
+                    location.addOnCompleteListener(this, new OnCompleteListener() {
                         @Override
                         public void onComplete(@NonNull Task task) {
                             if (task.isSuccessful()) {

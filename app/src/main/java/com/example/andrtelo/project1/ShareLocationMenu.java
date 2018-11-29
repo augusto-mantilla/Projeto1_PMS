@@ -2,14 +2,12 @@ package com.example.andrtelo.project1;
 
 import android.Manifest;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -21,6 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import static android.os.Environment.getExternalStoragePublicDirectory;
 
@@ -86,8 +85,7 @@ public class ShareLocationMenu extends AppCompatActivity {
         super.onActivityResult(requestCode,resultCode,data);
         if (resultCode == RESULT_OK){
             if (requestCode == 1){
-                Bitmap bitmap = BitmapFactory.decodeFile(pathToFile);
-                //imageView.setImageBitmap(bitmap);
+                BitmapFactory.decodeFile(pathToFile);
                 Intent intent = new Intent(ShareLocationMenu.this,TagMenu.class);
                 startActivity(intent);
             }
@@ -95,24 +93,20 @@ public class ShareLocationMenu extends AppCompatActivity {
     }
 
     private void dispatchPictureTakerAction(){
-        Intent Takephoto= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if(Takephoto.resolveActivity(getPackageManager())!= null){
-            File photoFile = null;
+        Intent takePhoto= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if(takePhoto.resolveActivity(getPackageManager())!= null){
+            File photoFile;
             photoFile = createPhotoFile();
             if(photoFile!= null){
-                String pathtofile = photoFile.getAbsolutePath();
                 Uri photoUri = FileProvider.getUriForFile(ShareLocationMenu.this,"com.example.andrtelo.project1.fileprovider",photoFile);
-                Takephoto.putExtra(MediaStore.EXTRA_OUTPUT,photoUri);
-                startActivityForResult(Takephoto,1);
-
-
+                takePhoto.putExtra(MediaStore.EXTRA_OUTPUT,photoUri);
+                startActivityForResult(takePhoto,1);
             }
-
         }
     }
-
+//criação do arquivo das fotos da aplicação na galeria
     private File createPhotoFile(){
-        String name = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String name = new SimpleDateFormat("yyyyMMdd_HHmmss",Locale.US).format(new Date());
         File storageDir = getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         File image = null;
         try {

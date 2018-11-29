@@ -8,17 +8,16 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class TagMenu extends AppCompatActivity {
-    private boolean Cetacean;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.share_menu);
         setContentView(R.layout.share_location_menu);
-        Button btnCetacean = (Button)findViewById(R.id.btnCetacean);
-        Button btnPollution = (Button)findViewById(R.id.btnPollution);
-        Button btnMainMenu3 = (Button)findViewById(R.id.btn_mainMenu3);
-        Button btnSeeMap4 = (Button)findViewById(R.id.btn_seeMap4);
-        Button btnShareOnApp = (Button)findViewById(R.id.btnShareOnApp4);
+        Button btnCetacean = findViewById(R.id.btnCetacean);
+        Button btnPollution = findViewById(R.id.btnPollution);
+        Button btnMainMenu3 = findViewById(R.id.btn_mainMenu3);
+        Button btnSeeMap4 = findViewById(R.id.btn_seeMap4);
+        Button btnShareOnApp = findViewById(R.id.btnShareOnApp4);
         btnSeeMap4.setOnClickListener(new View.OnClickListener() {//faz abrir o google maps ao carregar no botão
             @Override
             public void onClick(View v) {
@@ -30,7 +29,6 @@ public class TagMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.share_sucessfull);
-                Cetacean = true;
                 Toast.makeText(TagMenu.this,"Cetacean", Toast.LENGTH_LONG).show();
 
             }
@@ -39,7 +37,6 @@ public class TagMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.share_sucessfull);
-                Cetacean = false;
                 Toast.makeText(TagMenu.this,"Pollution", Toast.LENGTH_LONG).show();
 
             }
