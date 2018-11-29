@@ -26,34 +26,8 @@ public class MainActivity extends AppCompatActivity {
         if(isServicesOk()) {
             initMap();
         }
-        //Button btnWelcome = (Button) findViewById(R.id.btnWelcome);
-        Button btnShareOnApp = findViewById(R.id.btnShareOnApp);
 
-        Button btnSeeMap2 = findViewById(R.id.btn_seeMap2);
-        Button btnShareOnAPP2 = findViewById(R.id.btnShareOnApp2);
-
-        btnSeeMap2.setOnClickListener(new View.OnClickListener() {//faz abrir o google maps ao carregar no botão
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
-                startActivity(intent);
-            }
-        });
-        btnShareOnApp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ShareLocationMenu.class);
-                startActivity(intent);
-
-            }
-        });
-        btnShareOnAPP2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ShareLocationMenu.class);
-                startActivity(intent);
-            }
-        });
+        initShareMenu();
     }
 
     public Boolean isServicesOk(){
@@ -76,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initMap() {
         Button btnSeeMap = findViewById(R.id.btnSeeMap);
+
         btnSeeMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,5 +58,39 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btnSeeMap2 = findViewById(R.id.btn_seeMap2);
+
+        btnSeeMap2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+    private void initShareMenu() {
+        Button btnShareOnApp = findViewById(R.id.btnShareOnApp);
+
+        btnShareOnApp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShareLocationMenu.class);
+                startActivity(intent);
+
+            }
+        });
+
+        Button btnShareOnAPP2 = findViewById(R.id.btnShareOnApp2);
+
+        btnShareOnAPP2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShareLocationMenu.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 }

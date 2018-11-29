@@ -23,7 +23,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import com.example.andrtelo.project1.R;
-import com.example.andrtelo.project1.Camera;
 import com.example.andrtelo.project1.util.UniversalImageLoader;
 
 
@@ -56,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
 
         initImageLoader();
         initProgressBar();
-        setupFirebaseAuth();
+        //setupFirebaseAuth();
         init();
 
     }
@@ -150,6 +149,7 @@ public class LoginActivity extends AppCompatActivity {
     /*
         ----------------------------- Firebase setup ---------------------------------
      */
+    /*
     private void setupFirebaseAuth(){
         Log.d(TAG, "setupFirebaseAuth: started");
 
@@ -182,7 +182,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
     }
-
+*/
     @Override
     public void onStart() {
         super.onStart();

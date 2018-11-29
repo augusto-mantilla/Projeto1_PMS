@@ -60,12 +60,6 @@
         <activity
             android:name=".MapsActivity"
             android:label="@string/google_maps_key"></activity>
-        <activity
-            android:name=".GPSTracking"
-            android:label="GPS screen"></activity>
-        <activity
-            android:name=".Camera"
-            android:label=".account.RegisterActivity"></activity>
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
         <activity
             android:name=".CameraAPI">
