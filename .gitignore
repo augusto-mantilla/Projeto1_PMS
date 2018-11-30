@@ -34,8 +34,5 @@ output.json
 #NDK
 obj/
 .externalNativeBuild
+app/app.iml
 
-app/
-app.iml
-
-local.properties
