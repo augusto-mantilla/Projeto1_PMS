@@ -59,15 +59,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btnSeeMap2 = findViewById(R.id.btn_seeMap2);
-
-        btnSeeMap2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void initShareMenu() {
@@ -82,15 +73,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button btnShareOnAPP2 = findViewById(R.id.btnShareOnApp2);
 
-        btnShareOnAPP2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ShareLocationMenu.class);
-                startActivity(intent);
-            }
-        });
     }
 
 }
