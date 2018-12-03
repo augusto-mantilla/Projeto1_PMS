@@ -31,6 +31,9 @@ public class TagMenu extends AppCompatActivity {
                 setContentView(R.layout.share_sucessfull);
                 Toast.makeText(TagMenu.this,"Cetacean", Toast.LENGTH_LONG).show();
 
+                //Intent intent = new Intent(TagMenu.this, UploadFile.class);
+                //Intent intent = new Intent(TagMenu.this, UploadFile_2.class);
+                //startActivity(intent);
             }
         });
         btnPollution.setOnClickListener(new View.OnClickListener() {
