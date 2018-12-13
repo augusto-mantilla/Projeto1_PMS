@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.nbsp.materialfilepicker.MaterialFilePicker;
 import com.nbsp.materialfilepicker.ui.FilePickerActivity;
@@ -30,6 +31,7 @@ import okhttp3.Response;
 public class UploadFile extends AppCompatActivity {
 
     private Button button;
+    private Button btn_next;
     private static final String TAG = "UploadFile";
 
     @Override
@@ -38,8 +40,16 @@ public class UploadFile extends AppCompatActivity {
         setContentView(R.layout.upload_file);
 
         button = findViewById(R.id.button);
+        btn_next = findViewById(R.id.btn_next);
 
+        btn_next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.share_sucessfull);
+                Toast.makeText(UploadFile.this, "Cetacean", Toast.LENGTH_LONG).show();
 
+            }
+        });
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             if(ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
                 requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},100);
@@ -63,6 +73,8 @@ public class UploadFile extends AppCompatActivity {
             }
         });
     }
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -104,12 +116,17 @@ public class UploadFile extends AppCompatActivity {
                             .build();
 
                     Request request = new Request.Builder()
+                            //.url("http://evora.m-iti.org/testing/save_file.php")
                             .url("http://cetus.tigerwhale.com/testing/save_file.php")
                             .post(request_body)
                             .build();
 
+
+
                     try {
                         Response response = client.newCall(request).execute();
+
+                        Log.v(TAG,response.toString());
 
                         if(!response.isSuccessful()){
                             throw new IOException("Error : "+response);
@@ -129,9 +146,6 @@ public class UploadFile extends AppCompatActivity {
 
             t.start();
 
-
-
-
         }
     }
 
@@ -142,3 +156,4 @@ public class UploadFile extends AppCompatActivity {
         return MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
     }
 }
+

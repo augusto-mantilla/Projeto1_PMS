@@ -11,6 +11,7 @@ public class TagMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        TrackLocation tracker = new TrackLocation();
         setContentView(R.layout.share_menu);
         setContentView(R.layout.share_location_menu);
         Button btnCetacean = findViewById(R.id.btnCetacean);
@@ -28,12 +29,12 @@ public class TagMenu extends AppCompatActivity {
         btnCetacean.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.share_sucessfull);
-                Toast.makeText(TagMenu.this,"Cetacean", Toast.LENGTH_LONG).show();
+               // setContentView(R.layout.share_sucessfull);
+                //Toast.makeText(TagMenu.this,"Cetacean", Toast.LENGTH_LONG).show();
 
-                //Intent intent = new Intent(TagMenu.this, UploadFile.class);
+                Intent intent = new Intent(TagMenu.this, UploadFile.class);
                 //Intent intent = new Intent(TagMenu.this, UploadFile_2.class);
-                //startActivity(intent);
+                startActivity(intent);
             }
         });
         btnPollution.setOnClickListener(new View.OnClickListener() {
